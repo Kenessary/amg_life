@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "404116784160",
+    "project_id": "pushandroid-f7982",
+    "storage_bucket": "pushandroid-f7982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404116784160:android:8ae0e3b4ba336afd7ce845",
+        "android_client_info": {
+          "package_name": "kz.portmasterplus.cnpcamglife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404116784160-1d0qj460e0iinsti0jnabqifedjnkor7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kz.portmasterplus.cnpcamglife",
+            "certificate_hash": "6d09166fd3a6335bf1ab77407d600929288fa4d9"
+          }
+        },
+        {
+          "client_id": "404116784160-kamu3k1ho026prekfl7lcok6ais9cljq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kz.portmasterplus.cnpcamglife",
+            "certificate_hash": "9019700bc50ec27d8f0539d7acd9f594b9a9ca7b"
+          }
+        },
+        {
+          "client_id": "404116784160-ujforiirl2v2gl7mbdi1tqudja9kt5jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMTE42Tkh16X6unWa-hZutRib3JQEbuNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404116784160-ujforiirl2v2gl7mbdi1tqudja9kt5jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
