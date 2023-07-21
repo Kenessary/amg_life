@@ -57,7 +57,7 @@ export default function HomeScreen({navigation}){
   let [update, setUpdate] = useState('')
   let [modalResult, setModalResult] = useState(false)
   let [modalUpdate, setModalUpdate] = useState(false)
- 
+
   let [modalSocial, setModalSocial] = useState(false)
   // let [modalResult1, setModalResult1] = useState(true)
   let [otvetOpros, setOtvetOpros] = useState('')
@@ -73,7 +73,7 @@ export default function HomeScreen({navigation}){
   // console.log(update)
 
 // useEffect(()=>{
-  
+
 // },[])
 
 const [visible, setVisible] = useState(false);
@@ -88,17 +88,17 @@ const toggleBottomNavigationView1 = () => {
   //Toggling the visibility state of the bottom sheet
   setVisible1(!visible1);
 };
-//--------- СТОЛОВЫЙ ОПРОС --------- //  
+//--------- СТОЛОВЫЙ ОПРОС --------- //
   useEffect(()=>{
     setIsLoading(true)
     const data = qs.stringify({
-      'oprosdlyastolovkiiin': iin 
+      'oprosdlyastolovkiiin': iin
     });
     const config = {
       method: 'post',
       url: 'http://95.57.218.120/?index',
-      headers: { 
-        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+      headers: {
+        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       data : data
@@ -119,7 +119,7 @@ const toggleBottomNavigationView1 = () => {
       .catch(function(error){
           console.log(error)
           setIsLoading(false)
-      }) 
+      })
     },[])
 
 //--------- ПУШ ТОКЕН --------- //
@@ -132,8 +132,8 @@ const toggleBottomNavigationView1 = () => {
     const config = {
       method: 'post',
       url: 'http://95.57.218.120/?index',
-      headers: { 
-        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+      headers: {
+        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       data : data
@@ -142,7 +142,7 @@ const toggleBottomNavigationView1 = () => {
     .then(async function(response){
       let user = response.data.replace(/<[^>]*>/g, '').replace(/-->/g, '')
       let parsed = JSON.parse(user)
-      console.log(parsed) 
+      console.log(parsed)
     })
   } catch (error) {
     console.error(error)}
@@ -162,8 +162,8 @@ const toggleBottomNavigationView1 = () => {
     const config = {
       method: 'post',
       url: 'http://95.57.218.120/?index',
-      headers: { 
-        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+      headers: {
+        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       data : data
@@ -172,7 +172,7 @@ const toggleBottomNavigationView1 = () => {
     .then(async function(response){
       let user = response.data.replace(/<[^>]*>/g, '').replace(/-->/g, '')
       let parsed = JSON.parse(user)
-      console.log(parsed) 
+      console.log(parsed)
     })
   } catch (error) {
     console.error(error)}
@@ -241,8 +241,8 @@ useEffect(()=>{
     const config = {
       method: 'post',
       url: 'http://95.57.218.120/?index',
-      headers: { 
-        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+      headers: {
+        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       data : data
@@ -261,21 +261,21 @@ useEffect(()=>{
     .catch(function(error){
       console.log(error)
       setIsLoading1(false)
-    }) 
+    })
   }
 
-//--------- ЯЗЫКИ --------- //    
+//--------- ЯЗЫКИ --------- //
   useEffect(()=>{
     if(locale !== ''){
       AsyncStorage.setItem('appLanguage', locale)
     }
   })
-    
+
   useEffect(()=>{
     getData()
   })
 
-  const getData = () => { 
+  const getData = () => {
     try {
       AsyncStorage.getItem('appLanguage')
       .then(value => {
@@ -292,8 +292,8 @@ useEffect(()=>{
   useEffect(()=>{
     getDataApparat()
   },[])
-  
-  const getDataApparat = () => { 
+
+  const getDataApparat = () => {
     try {
       AsyncStorage.getItem('userApparat')
       .then(value => {
@@ -311,7 +311,7 @@ useEffect(()=>{
     getDataStolovaya()
   },[])
 
-  const getDataStolovaya = () => { 
+  const getDataStolovaya = () => {
     try {
       AsyncStorage.getItem('userStolovaya')
         .then(value => {
@@ -353,20 +353,20 @@ useEffect(()=>{
             <View style={{marginLeft: 5, width: windowWidth/1.3}}>
                 <Text style={{color: theme.color, fontSize: 16}} key={Math.random()}>{eat}</Text>
             </View>
-        </View> 
+        </View>
     )
   }
 
   useEffect(()=>{
     setIsLoading(true)
     const data = qs.stringify({
-      'infoiin': iin 
+      'infoiin': iin
     });
     const config = {
       method: 'post',
       url: 'http://95.57.218.120/?index',
-      headers: { 
-        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+      headers: {
+        'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       data : data
@@ -376,23 +376,23 @@ useEffect(()=>{
         let user = response.data.replace(/<[^>]*>/g, '').replace(/-->/g, '')
         let parsed = JSON.parse(user)
         setFio(parsed.fio)
-  
+
         // const day = moment().format(`DD`)
         // const mm = moment().format(`MM`)
         // const iinMonth = (parsed.iin).slice(2,4)
         // const iinDay = (parsed.iin).slice(4,6)
-  
+
         // console.log(day === iinDay)
-  
+
   //       await registerIndieID(`${iin}`, 5464, 'cq3oCzyrxvjyjKu8iBQDal');
-  
+
         setIsLoading(false)
     })
-  
+
     .catch(function(error){
         console.log(error)
         setIsLoading(false)
-    }) 
+    })
   },[])
 
 //--------- ИНДИКАТОР ЗАГРУЗКИ --------- //
@@ -415,7 +415,7 @@ useEffect(()=>{
 
   // console.log(Platform.OS)
 
-//--------- ФРОНТЕНД СТРАНИЦЫ --------- //  
+//--------- ФРОНТЕНД СТРАНИЦЫ --------- //
   return (
     <View style={{...styles.container, opacity: modalSocial ? 0.3 : 1, backgroundColor: theme.background, flex:1, zIndex:10}}>
       <View style={{position:'absolute', bottom:20, right:20, zIndex:30}}>
@@ -453,7 +453,7 @@ useEffect(()=>{
                 </View>
 
               <View style={{flexDirection:'row', justifyContent:'space-around', marginTop:15}}>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={{padding:8, borderWidth:2, borderRadius:15, borderColor:'#e4e4e4'}}
                   onPress={()=>Linking.openURL(`instagram://user?username=cnpc_kazakhstan`)}
                 >
@@ -462,7 +462,7 @@ useEffect(()=>{
                     <Text style={{marginLeft:5, fontSize:14, color:theme.color,}}>cnpc_kazakhstan</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={{padding:8, borderWidth:2, borderRadius:15, borderColor:'#e4e4e4'}}
                   onPress={()=>Linking.openURL('vnd.youtube://@cnpc-amg7239/CNPC-AMG/')}
                 >
@@ -474,7 +474,7 @@ useEffect(()=>{
               </View>
 
               <View style={{flexDirection:'row', justifyContent:'space-around', marginTop:15}}>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={{padding:8, borderWidth:2, borderRadius:15, borderColor:'#e4e4e4'}}
                   onPress={()=>Linking.openURL('http://facebook.com/cnpc.kazakhstan')}
                 >
@@ -483,7 +483,7 @@ useEffect(()=>{
                     <Text style={{marginLeft:5, fontSize:14, color:theme.color,}}>cnpc.kazakhstan</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={{padding:8, borderWidth:2, borderRadius:15, borderColor:'#e4e4e4'}}
                   onPress={()=>Linking.openURL('http://www.cnpc-amg.kz/')}
                 >
@@ -508,7 +508,7 @@ useEffect(()=>{
                 </View>
 
 
-              
+
             </View>
           </View>
 </BottomSheet>
@@ -533,7 +533,7 @@ useEffect(()=>{
             speed={0.6}
             style={{width:230, height:230, marginBottom:20}}
           />
-            </View> 
+            </View>
 
           </View>
 </BottomSheet>
@@ -544,7 +544,7 @@ useEffect(()=>{
         <View style={styles.header}>
           <Text style={[styles.headerTitle, {color: theme.color}]}>{i18n.t('main')}</Text>
           <View>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={{padding:5,paddingLeft:10, paddingRight:10, backgroundColor: theme.background, flexDirection:'row', alignItems:'center', borderRadius:15, borderWidth: isDarkMode ? 1.3 : 0.8, borderColor: theme.borderColor}}
             // onPress={() => setModalSocial(true)}
             onPress={toggleBottomNavigationView}
@@ -626,10 +626,10 @@ useEffect(()=>{
             />
           </View>
         </View>
-        <View style={{marginBottom:60}}></View> 
+        <View style={{marginBottom:60}}></View>
       </ScrollView>
 
-      
+
       <Modal animationType="fade" transparent={false} visible={modalUpdate}>
          <View style={{width:'100%', height:'100%', justifyContent:'flex-end', backgroundColor: theme.background}}>
           <View style={{alignItems:'center', marginBottom:60}}>
@@ -715,7 +715,7 @@ useEffect(()=>{
         </Modal>
 
 
-        
+
 
         <Modal animationType="fade" transparent={true} visible={isLoading1}>
           <View style={styles.centeredView}>
@@ -724,7 +724,7 @@ useEffect(()=>{
             </View>
           </View>
         </Modal>
-        
+
       </Modal>
     </View>
   )
@@ -732,15 +732,15 @@ useEffect(()=>{
 
 const styles = StyleSheet.create({
   container:{
-    width: windowWidth, 
+    width: windowWidth,
     height: windowHeight
   },
   header:{
-    flexDirection:'row', 
-    marginTop: Platform.OS === 'ios' ? 40 : 30, 
+    flexDirection:'row',
+    marginTop: Platform.OS === 'ios' ? 40 : 30,
     marginBottom:10,
-    alignItems:'center', 
-    justifyContent:'space-between', 
+    alignItems:'center',
+    justifyContent:'space-between',
     width:windowWidth-40
   },
   modalViewLoad: {
@@ -787,10 +787,10 @@ const styles = StyleSheet.create({
     fontWeight:"bold",
   },
   socialnet:{
-    alignItems:'center', 
-    width:150, 
-    padding:5, 
-    flexDirection:'row', 
+    alignItems:'center',
+    width:150,
+    padding:5,
+    flexDirection:'row',
     justifyContent:'space-around'
   },
   listItem:{
@@ -813,46 +813,46 @@ const styles = StyleSheet.create({
     justifyContent:'center'
   },
   menuOprosHeader:{
-    width:windowWidth-40, 
-    padding:15, 
-    borderRadius:15, 
+    width:windowWidth-40,
+    padding:15,
+    borderRadius:15,
     paddingBottom:-10
   },
   menuOprosTitleCenter: {
-    alignItems:'center', 
+    alignItems:'center',
     justifyContent:'center'
   },
   menuOprosTitle:{
-    fontSize:18, 
-    fontWeight:'600', 
+    fontSize:18,
+    fontWeight:'600',
     marginBottom: 15
   },
   buttonContainer:{
-    width:windowWidth-40, 
-    height:60, 
-    flexDirection:'row', 
-    alignItems:"center", 
+    width:windowWidth-40,
+    height:60,
+    flexDirection:'row',
+    alignItems:"center",
     justifyContent:'center',
     marginTop: 20
   },
   buttonYes:{
-    alignItems:'center', 
-    justifyContent:'center', 
-    width:90, 
-    height:50, 
-    marginRight:70, 
+    alignItems:'center',
+    justifyContent:'center',
+    width:90,
+    height:50,
+    marginRight:70,
     borderRadius:15
   },
   buttonYesText:{
-    fontSize:18, 
+    fontSize:18,
     fontWeight:'500'
   },
   buttonNo:{
-    alignItems:'center', 
-    justifyContent:'center', 
-    width:90, 
-    height:50, 
-    borderRadius:15, 
+    alignItems:'center',
+    justifyContent:'center',
+    width:90,
+    height:50,
+    borderRadius:15,
     borderWidth:3
   },
   buttonNoText:{
@@ -861,13 +861,13 @@ const styles = StyleSheet.create({
     color:'#D64D43'
   },
   modalContainer:{
-    flexDirection:'column', 
+    flexDirection:'column',
     alignItems:'center'
   },
   otvetOpros:{
-    fontSize:16, 
-    fontWeight:'600', 
-    marginBottom:10, 
+    fontSize:16,
+    fontWeight:'600',
+    marginBottom:10,
     marginTop:10,
   },
   centeredView: {

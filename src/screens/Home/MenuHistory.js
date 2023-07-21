@@ -34,7 +34,7 @@ export default function MenuHistory () {
     const [ historyDate, setHistoryDate ] = useState([])
     const [ isLoading, setIsLoading ] = useState(false)
 
-    
+
     const history = () => {
         setIsLoading(true)
         const config = {
@@ -58,7 +58,7 @@ export default function MenuHistory () {
           console.log(error);
           setIsLoading(false)
          })
-    } 
+    }
 
     useEffect(()=>{
             history()
@@ -92,7 +92,7 @@ if(isLoading) {
             <ScrollView showsVerticalScrollIndicator={true}>
             {historymenu}
             </ScrollView>
-            
+
         </View>
       </View>
     )

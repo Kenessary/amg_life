@@ -1,12 +1,12 @@
 import { Text, View, TextInput, Dimensions, ScrollView, KeyboardAvoidingView, TouchableOpacity, Modal, Alert, StyleSheet, Pressable, ActivityIndicator } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
-import { AntDesign, Ionicons } from '@expo/vector-icons'; 
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { AuthContext } from '../../context/AuthContext'
 import moment from 'moment';
 import qs from "qs"
 import axios from "axios"
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
 import themeContext from '../../cores/themeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -75,13 +75,13 @@ export default function FoodMenuPanel({navigation}) {
   // const [oab, setOab] = useState('');
   const [inputs, setInputs] = useState(
     {
-      salat1: '', 
-      salat2: ', ', 
-      perv1: '', 
-      perv2: '', 
-      sec1: '', 
+      salat1: '',
+      salat2: ', ',
+      perv1: '',
+      perv2: '',
+      sec1: '',
       sec2: '',
-      gar1: '', 
+      gar1: '',
       gar2: '',
       vyp: '',
     })
@@ -101,8 +101,8 @@ const foodAdd = () => {
   const config = {
     method: 'post',
     url: 'http://95.57.218.120/?index',
-    headers: { 
-      'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+    headers: {
+      'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     data : data
@@ -114,14 +114,14 @@ const foodAdd = () => {
   }
       let user = response.data.replace(/<[^>]*>/g, '').replace(/-->/g, '')
       let parsed = JSON.parse(user)
-      setMenuStatus(parsed.status) 
-      setIsLoading(false) 
+      setMenuStatus(parsed.status)
+      setIsLoading(false)
   })
 
   .catch(function(error){
       console.log(error)
       setIsLoading(false)
-  }) 
+  })
 }
 
 // console.log(selectedDate)
@@ -183,7 +183,7 @@ useEffect(()=>{
 
 
 
- 
+
     return (
       <ScrollView style={{height:'100%', backgroundColor: theme.background , opacity: modalVisible || modalVisible1 ? 0.1 : 1}} automaticallyAdjustKeyboardInsets={true} StickyHeaderComponent>
 <View style={{alignItems:'center', marginTop:10}} >
@@ -197,16 +197,16 @@ useEffect(()=>{
       </View>
 
 </View>
-              
+
 
       <View style={{ alignItems:'center', marginTop:20}}>
         {/* <Text style={{fontSize:17, fontWeight:'600', marginBottom:10,marginTop:15, color:'#4d4d4d'}}>Выберите дату:</Text> */}
-        <TouchableOpacity 
+        <TouchableOpacity
           style={{width:windowWidth-130, height:40, backgroundColor:'#B9B9B9', borderRadius:15, alignItems:'center', justifyContent:'center', flexDirection:'row'}}
           onPress={()=>setModalVisible(true)}
           >
           <AntDesign name="calendar" size={20} color="white" />
-          <Text 
+          <Text
             style={{fontSize:16, fontWeight:'500', color:"white", marginLeft:10}}>
               Выберите дату
             </Text>
@@ -215,7 +215,7 @@ useEffect(()=>{
 <Text style={{fontSize:17, fontWeight:'600', marginBottom:10,marginTop:15, color: theme.color}}>Введите меню:</Text>
 
 
-  
+
       </View>
       {/* <TextInput style={{width: 200, height:40, borderWidth:0.5, borderColor:'#4d4d4d', borderRadius:15, fontSize:16}}/> */}
       <View style={{alignItems:'center'}}>
@@ -225,7 +225,7 @@ useEffect(()=>{
       <Text style={{fontSize:14, fontWeight:'500', color: theme.color}}>Салат №1:</Text>
 
         </View>
-        <TextInput 
+        <TextInput
         style={{width: 200, height:30, borderRadius:15, fontSize:14, backgroundColor:'white', borderWidth:0.5, borderColor:'grey', paddingLeft:10, paddingRight:10}}
         onChangeText={(text)=>handleOnChange(text, 'salat1')}
         />
@@ -272,7 +272,7 @@ useEffect(()=>{
       <View style={{width:'100%', height:0.5, backgroundColor:'grey', marginTop:10, marginBottom:10}}></View>
 
 
-      
+
       <View style={{flexDirection:'row', alignItems:'center', marginBottom:10}}>
         <View style={{width: 90, marginRight: 5}}>
       <Text style={{fontSize:14, fontWeight:'500', color: theme.color,}}>Второе блюдо №1:</Text>
@@ -285,8 +285,8 @@ useEffect(()=>{
       </View>
 
 
-      
-      
+
+
       <View style={{flexDirection:'row', alignItems:'center'}}>
         <View style={{width: 90, marginRight: 5}}>
       <Text style={{fontSize:14, fontWeight:'500', color: theme.color,}}>Второе блюдо №2:</Text>
@@ -301,7 +301,7 @@ useEffect(()=>{
       <View style={{width:'100%', height:0.5, backgroundColor:'grey', marginTop:10, marginBottom:10}}></View>
 
 
-      
+
       {/* <KeyboardAvoidingView> */}
       <View style={{flexDirection:'row', alignItems:'center', marginBottom:10}}>
         <View style={{width: 90, marginRight: 5}}>
@@ -313,13 +313,13 @@ useEffect(()=>{
         />
 
       </View>
-        
+
       {/* </KeyboardAvoidingView> */}
-      
 
 
-      
-      
+
+
+
       <View style={{flexDirection:'row', alignItems:'center'}}>
         <View style={{width: 90, marginRight: 5}}>
       <Text style={{fontSize:14, fontWeight:'500', color: theme.color,}}>Гарнир №2:</Text>
@@ -335,8 +335,8 @@ useEffect(()=>{
 
 
 
-      
-      
+
+
       <View style={{flexDirection:'row', alignItems:'center', marginBottom:10}}>
         <View style={{width: 90, marginRight: 5}}>
       <Text style={{fontSize:14, fontWeight:'500', color: theme.color,}}>Выпечка:</Text>
@@ -356,20 +356,20 @@ useEffect(()=>{
       </View>
 
 
-      
- 
 
- 
 
-      
 
-      
+
+
+
+
+
     </View>
     <View style={{marginBottom:40}}></View>
 
       </View>
 
-      <Modal 
+      <Modal
             animationType="fade"
             transparent={true}
             visible={modalVisible}

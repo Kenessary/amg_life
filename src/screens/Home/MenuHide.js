@@ -21,7 +21,7 @@ export default function MenuHide ({onPress}) {
       // Load the user's preference from AsyncStorage
       loadDarkModePreference();
     });
-  
+
     const loadDarkModePreference = async () => {
       try {
         const preference = await AsyncStorage.getItem('darkMode');
@@ -33,7 +33,7 @@ export default function MenuHide ({onPress}) {
       }
     };
 
-    
+
     let [locale, setLocale] = useState('');
     let [lang, setLang] = useState('')
     i18n.fallbacks = true
@@ -46,12 +46,12 @@ export default function MenuHide ({onPress}) {
           AsyncStorage.setItem('appLanguage', locale)
         }
       })
-    
+
       useEffect(()=>{
         getData()
     })
-    
-    const getData = () => { 
+
+    const getData = () => {
         try {
             AsyncStorage.getItem('appLanguage')
                 .then(value => {

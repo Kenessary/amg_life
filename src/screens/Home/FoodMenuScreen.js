@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Text, View, StyleSheet, Dimensions, TouchableOpacity, Alert } from 'react-native';
 import Header from '../../components/Header';
-import { FontAwesome5, Feather, FontAwesome, Ionicons } from '@expo/vector-icons'; 
+import { FontAwesome5, Feather, FontAwesome, Ionicons } from '@expo/vector-icons';
 import moment from 'moment';
 import axios from 'axios';
 import qs from 'qs'
@@ -31,12 +31,12 @@ function FoodMenuScreen({navigation, goBack}) {
     const theme = useContext(themeContext)
 
     const [isDarkMode, setIsDarkMode] = useState(false)
-  
+
     useEffect(() => {
       // Load the user's preference from AsyncStorage
       loadDarkModePreference();
     }, []);
-  
+
     const loadDarkModePreference = async () => {
       try {
         const preference = await AsyncStorage.getItem('darkMode');
@@ -71,12 +71,12 @@ function FoodMenuScreen({navigation, goBack}) {
           AsyncStorage.setItem('appLanguage', locale)
         }
       })
-    
+
       useEffect(()=>{
         getData1()
     })
-    
-    const getData1 = () => { 
+
+    const getData1 = () => {
         try {
             AsyncStorage.getItem('appLanguage')
                 .then(value => {
@@ -126,7 +126,7 @@ function FoodMenuScreen({navigation, goBack}) {
             setMenu((JSON.stringify(parse_third)).split(';'))
             setMenuNo(parse_third)
             const month = moment().format('MM')
-            
+
 
             if (month === '01'){setTextMonth(i18n.t('january'))}
             if (month === '02'){setTextMonth(i18n.t('february'))}
@@ -151,19 +151,19 @@ function FoodMenuScreen({navigation, goBack}) {
          })
       },[])
 
-      
 
-      
+
+
     useEffect(()=>{
         setIsLoading(true)
         const data = qs.stringify({
-            'balanspitiin': iin 
+            'balanspitiin': iin
           });
         const config = {
             method: 'post',
             url: 'http://95.57.218.120/?index',
-            headers: { 
-              'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=', 
+            headers: {
+              'Authorization': 'Basic OTgwNjI0MzUxNDc2OjIyMjI=',
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             data : data
@@ -182,19 +182,19 @@ function FoodMenuScreen({navigation, goBack}) {
 
     const foods = []
     // const date = new Date().toDateString()
-    
+
 
     if (menu.length !== 1) {
         for(let i = 0; i< menu.length-2; i++){
             const eat = (menu[i]).replace('"', '').replace(' ', '')
-    
+
             foods.push(
                 <View style={{ flexDirection:'row', marginBottom: 20,}} key={Math.random()}>
                     <FontAwesome name="circle" size={15} color={isDarkMode === true ? '#C0D5EE' : '#D64D43'} style={{marginTop:3}}/>
                     <View style={{marginLeft: 5 }}>
                         <Text style={{color: theme.color, fontSize: 16}} key={Math.random()}>{eat}</Text>
                     </View>
-                </View> 
+                </View>
             )
         }
     } else {
@@ -231,11 +231,11 @@ function FoodMenuScreen({navigation, goBack}) {
     //             <View style={{marginLeft: 5, width: windowWidth/1.3}}>
     //                 <Text style={{color:'black', fontSize: 16}} key={Math.random()}>{eat}</Text>
     //             </View>
-    //         </View> 
+    //         </View>
     //     )
     // }
 
-    
+
 
     if(isLoading) {
         return(
@@ -245,10 +245,10 @@ function FoodMenuScreen({navigation, goBack}) {
         )
     }
 
-    
+
 
     return (
-        
+
         <View style={{backgroundColor: theme.menuBalance}}>
             <StatusBar style='light'/>
             {/* <Text style={styles.header}>Меню столовая</Text> */}
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         // alignItems: 'center',
         borderRadius: 15,
-        
+
     },
     foodmenu: {
         width: '100%',
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     },
     foods: {
         width: windowWidth - 60,
-        position: 'absolute', 
+        position: 'absolute',
         top: 60
     }
 })

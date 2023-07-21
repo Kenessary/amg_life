@@ -8,7 +8,7 @@ import LottieView from "lottie-react-native"
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-  
+
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import i18n from 'i18n-js'
@@ -57,7 +57,7 @@ function BirthdayScreen({navigation}) {
       body: 'test',
       // data: { someData: 'goes here' },
     };
-  
+
     await fetch('https://exp.host/--/api/v2/push/send', {
       method: 'POST',
       headers: {
@@ -75,12 +75,12 @@ function BirthdayScreen({navigation}) {
       AsyncStorage.setItem('appLanguage', locale)
     }
   })
-    
+
   useEffect(()=>{
         getData1()
   })
 
-  const getData1 = () => { 
+  const getData1 = () => {
     try {
       AsyncStorage.getItem('appLanguage')
         .then(value => {
@@ -133,7 +133,7 @@ function BirthdayScreen({navigation}) {
       console.log(error);
       setIsLoading(false)
     })
-  } 
+  }
 
   useEffect(()=>{
     btd()
@@ -148,7 +148,7 @@ function BirthdayScreen({navigation}) {
         <View style={[styles.birthdayItem, {backgroundColor:theme.bottomNavigationColor}]} key={Math.random()}>
           <View style={[styles.birthdayIcon,{backgroundColor:theme.iconColorBack}]}>
             <FontAwesome name="birthday-cake" size={19} color={theme.iconColor} />
-          </View> 
+          </View>
           <View style={styles.birthdayText}><Text style={{color: theme.color}}>{bd}</Text></View>
         </View>
       )
@@ -188,7 +188,7 @@ function BirthdayScreen({navigation}) {
           </View>
         </View>
 
-      </ScrollView>    
+      </ScrollView>
     </View>
   );
 }
@@ -197,51 +197,51 @@ export default BirthdayScreen;
 
 const styles = StyleSheet.create({
   birthdayItem:{
-    width: '100%', 
-    height:50,  
-    borderRadius: 15, 
-    alignItems:'center', 
-    marginBottom: 10, 
-    paddingLeft:5, 
+    width: '100%',
+    height:50,
+    borderRadius: 15,
+    alignItems:'center',
+    marginBottom: 10,
+    paddingLeft:5,
     flexDirection:'row'
   },
   birthdayIcon:{
-    width: 40, 
-    height: 40, 
-    borderRadius: 12, 
+    width: 40,
+    height: 40,
+    borderRadius: 12,
     alignItems:'center',
     justifyContent:'center'
   },
   birthdayText:{
-    marginLeft:10, 
-    marginRight: 10, 
+    marginLeft:10,
+    marginRight: 10,
     width: windowWidth-150
   },
   noneContainer:{
     alignItems:'center',
     justifyContent: 'center',
     width: windowWidth-60,
-    height: 50, 
-    backgroundColor:'#F5DBDA', 
+    height: 50,
+    backgroundColor:'#F5DBDA',
     borderRadius:15, marginTop: 30
   },
   noneText:{
-    fontSize: 15, 
+    fontSize: 15,
     textAlign:'center',
-    color:"#D64D43", 
-    fontWeight:'bold' 
+    color:"#D64D43",
+    fontWeight:'bold'
   },
   centered:{
     alignItems:'center'
   },
   dateContainer:{
-    width: windowWidth-60, 
-    alignItems:'center', 
-    marginBottom: 20, 
+    width: windowWidth-60,
+    alignItems:'center',
+    marginBottom: 20,
     marginTop: 10
   },
   dateText:{
-    fontSize: 17, 
+    fontSize: 17,
     fontWeight:'bold',
   },
   height100:{

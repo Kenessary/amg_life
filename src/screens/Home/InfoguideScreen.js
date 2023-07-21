@@ -21,7 +21,7 @@ import themeContext from "../../cores/themeContext";
 
 
 export default function InfoguideScreen({navigation}){
-    
+
   const theme = useContext(themeContext)
 
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -61,42 +61,42 @@ export default function InfoguideScreen({navigation}){
     // console.log(search[0].cabinet)
     const [data, setData] = useState(
         [
-            {"descr": i18n.t('kmk'), "id": 524}, 
-            {"descr": i18n.t('vspomogat'), "id": 520}, 
-            {"descr": i18n.t('provkom'), "id": 498}, 
-            {"descr": i18n.t('su'), "id": 2}, 
-            {"descr": i18n.t('cnpcAtk'), "id": 13}, 
-            {"descr": i18n.t('usnNP'), "id": 7}, 
-            {"descr": i18n.t('uptoKo'), "id": 1}, 
-            {"descr": i18n.t('uopT'), "id": 10}, 
-            {"descr": i18n.t('nursultanPrav'), "id": 12}, 
-            {"descr": i18n.t('ams'), "id": 14}, 
-            {"descr": i18n.t('jngk'), "id": 11}, 
-            {"descr": i18n.t('aen'), "id": 15}, 
-            {"descr": i18n.t('ongdu'), "id": 16}, 
-            {"descr": i18n.t('kngdu'), "id": 17}, 
-            {"descr": i18n.t('nii'), "id": 276}, 
-            {"descr": i18n.t('suoem'), "id": 161}, 
-            {"descr": i18n.t('db'), "id": 89}, 
-            {"descr": i18n.t('centIT'), "id": 179}, 
-            {"descr": i18n.t('ad'), "id": 82}, 
-            {"descr": i18n.t('drK'), "id": 168}, 
-            {"descr": i18n.t('df'), "id": 142}, 
-            {"descr": i18n.t('dpoz'), "id": 118}, 
-            {"descr": i18n.t('dpd'), "id": 123}, 
-            {"descr": i18n.t('dtr'), "id": 136}, 
-            {"descr": i18n.t('ped'), "id": 149}, 
-            {"descr": i18n.t('dks'), "id": 102}, 
-            {"descr": i18n.t('dot'), "id": 113}, 
-            {"descr": i18n.t('dRazvetki'), "id": 128}, 
-            {"descr": i18n.t('dRazrabotki'), "id": 131}, 
-            {"descr": i18n.t('dBurenie'), "id": 93}, 
-            {"descr": i18n.t('do'), "id": 72}, 
-            {"descr": i18n.t('ddn'), "id": 97}, 
-            {"descr": i18n.t('dkptr'), "id": 107}, 
-            {"descr": i18n.t('skbp'), "id": 177}, 
-            {"descr": i18n.t('rukovot'), "id": 184}, 
-            {"descr": i18n.t('agd'), "id": 77}, 
+            {"descr": i18n.t('kmk'), "id": 524},
+            {"descr": i18n.t('vspomogat'), "id": 520},
+            {"descr": i18n.t('provkom'), "id": 498},
+            {"descr": i18n.t('su'), "id": 2},
+            {"descr": i18n.t('cnpcAtk'), "id": 13},
+            {"descr": i18n.t('usnNP'), "id": 7},
+            {"descr": i18n.t('uptoKo'), "id": 1},
+            {"descr": i18n.t('uopT'), "id": 10},
+            {"descr": i18n.t('nursultanPrav'), "id": 12},
+            {"descr": i18n.t('ams'), "id": 14},
+            {"descr": i18n.t('jngk'), "id": 11},
+            {"descr": i18n.t('aen'), "id": 15},
+            {"descr": i18n.t('ongdu'), "id": 16},
+            {"descr": i18n.t('kngdu'), "id": 17},
+            {"descr": i18n.t('nii'), "id": 276},
+            {"descr": i18n.t('suoem'), "id": 161},
+            {"descr": i18n.t('db'), "id": 89},
+            {"descr": i18n.t('centIT'), "id": 179},
+            {"descr": i18n.t('ad'), "id": 82},
+            {"descr": i18n.t('drK'), "id": 168},
+            {"descr": i18n.t('df'), "id": 142},
+            {"descr": i18n.t('dpoz'), "id": 118},
+            {"descr": i18n.t('dpd'), "id": 123},
+            {"descr": i18n.t('dtr'), "id": 136},
+            {"descr": i18n.t('ped'), "id": 149},
+            {"descr": i18n.t('dks'), "id": 102},
+            {"descr": i18n.t('dot'), "id": 113},
+            {"descr": i18n.t('dRazvetki'), "id": 128},
+            {"descr": i18n.t('dRazrabotki'), "id": 131},
+            {"descr": i18n.t('dBurenie'), "id": 93},
+            {"descr": i18n.t('do'), "id": 72},
+            {"descr": i18n.t('ddn'), "id": 97},
+            {"descr": i18n.t('dkptr'), "id": 107},
+            {"descr": i18n.t('skbp'), "id": 177},
+            {"descr": i18n.t('rukovot'), "id": 184},
+            {"descr": i18n.t('agd'), "id": 77},
             {"descr": i18n.t('asp'), "id": 156}
         ]
     )
@@ -124,12 +124,12 @@ export default function InfoguideScreen({navigation}){
           AsyncStorage.setItem('appLanguage', locale)
         }
       })
-    
+
       useEffect(()=>{
         getData1()
     })
-    
-    const getData1 = () => { 
+
+    const getData1 = () => {
         try {
             AsyncStorage.getItem('appLanguage')
                 .then(value => {
@@ -146,7 +146,7 @@ export default function InfoguideScreen({navigation}){
     }
 
 
-  
+
 
     const searchs = search.map((list)=>{
         return{
@@ -156,14 +156,14 @@ export default function InfoguideScreen({navigation}){
             raboch_tel: list.raboch_tel,
             sot_tel: list.sot_tel,
             email: list.email,
-            fax: list.fax, 
+            fax: list.fax,
             predki: list.predki
         }
     })
 
     globalThis.search = searchs
 
-        // useEffect(()=>{ 
+        // useEffect(()=>{
         //     setIsLoading(true)
         //     const config = {
         //         method:'get',
@@ -189,8 +189,8 @@ export default function InfoguideScreen({navigation}){
         //             setData(newArray)
         //             // console.log(newArray)
         //             setIsLoading(false)
-                    
-                
+
+
         //         })
         //         .catch(function (error) {
         //             console.log(error);
@@ -215,40 +215,40 @@ export default function InfoguideScreen({navigation}){
         <View>
           <View>
           </View>
-        
+
         <View style={[styles.tableHeader ,{backgroundColor: theme.tableHeaderBack}]}>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.columnHeader} >
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                     {i18n.t('fioImia')}
-                </Text>   
+                </Text>
             </TouchableOpacity>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.columnHeader} >
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('doljnost')}
-                </Text> 
+                </Text>
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('fax')}
-                </Text>  
+                </Text>
             </TouchableOpacity>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.columnHeader} >
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('telphoneNum')}
                 </Text>
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('pochta')}
-                </Text>   
+                </Text>
             </TouchableOpacity>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.columnHeadert} >
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('sotovi')}
-                </Text> 
+                </Text>
                 <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
                 {i18n.t('podrazdelenie')}
-                </Text>  
+                </Text>
             </TouchableOpacity>
         </View>
         </View>
@@ -276,14 +276,14 @@ export default function InfoguideScreen({navigation}){
                         raboch_tel: list.raboch_tel,
                         sot_tel: list.sot_tel,
                         email: list.email,
-                        fax: list.fax, 
+                        fax: list.fax,
                         predki: list.predki
                     }
                 })
 
-                
+
                 setSearch(newArray)
-                
+
                 // if (search[0].cabinet){
                 //     Alert.alert('увувувув')
                 // }
@@ -299,7 +299,7 @@ export default function InfoguideScreen({navigation}){
     // console.log(text)
     return(
         <View style={{flex:1,backgroundColor: isDarkMode === true ? '#262C38' : '#F2F2F2'}}>
-    
+
                 <View style={{alignItems: 'center', justifyContent:'center', marginTop:15}}>
 
                     <SelectDropdown
@@ -327,28 +327,28 @@ export default function InfoguideScreen({navigation}){
 		return item
 	}}
 />
-                    
+
                     <View style={{marginTop: 5}}>
                     <View style={{flexDirection:'row', alignItems:'center', width: windowWidth-20, backgroundColor: theme.bottomNavigationColor, height: 50, borderRadius:10, marginTop: 10}}>
                         <TextInput
                             placeholder={i18n.t('searchguide')}
                             style={[styles.input, {color: theme.color}]}
-                            onChangeText={text => setText(text)} 
+                            onChangeText={text => setText(text)}
                             blurOnSubmit = {true}
                             placeholderTextColor={theme.color}
-                            
+
                         />
 
-                        <TouchableOpacity 
+                        <TouchableOpacity
                         onPress = {()=> {getSearch(); setShouldShow()}}
                         //  onPress={() => navigation.navigate('SearchScreen')}
                         style={{width: 65 , height: 50, borderRadius: 10, marginLeft: 11, backgroundColor: theme.dateBack, alignItems:'center', justifyContent:'center'}}
-                        ><FontAwesome5 name="search" size={18} color="white"/></TouchableOpacity>             
+                        ><FontAwesome5 name="search" size={18} color="white"/></TouchableOpacity>
                     </View>
                     {/* <SelectList
-                        data={data.map((list)=> list.descr).sort()} 
-                        setSelected = {setSelected} 
-                        onSelect={() => 
+                        data={data.map((list)=> list.descr).sort()}
+                        setSelected = {setSelected}
+                        onSelect={() =>
                             navigation.navigate('InfoDepartment')
                         }
                         search = {false}
@@ -362,16 +362,16 @@ export default function InfoguideScreen({navigation}){
 
                     </View>
 
-                </View> 
+                </View>
                 {!shouldShow ? (
                     <View>
                     <View style={{marginLeft: 15, marginTop: 15}}><Text style={{fontSize: 14, color: isDarkMode === true ? "white" : "#0D6106"}}> {i18n.t('searchguideresult')} <Text style={{fontWeight: 'bold', fontSize:13,color: isDarkMode === true ? "white" : "#0D6106" }}>{search.length}</Text></Text></View>
                     <View style={{alignItems:'center', marginTop: 15}}>
                        <View>
-                        
+
                     <View>
                         <View>
-                            <FlatList 
+                            <FlatList
                             data={search}
                             style={{width: windowWidth-20, height: '60%'}}
                             keyExtractor={(item, index) => index+""}
@@ -392,9 +392,9 @@ export default function InfoguideScreen({navigation}){
                    {/* </ScrollView> */}
 
                        </View>
-        
+
                    </View>
-                        
+
                     </View>
                 ) : null}
         </View>
@@ -408,12 +408,12 @@ const styles = StyleSheet.create({
         marginBottom: 5
     },
     subHeader:{
-        fontSize:17, 
-        fontWeight: '600', 
-        marginLeft:30, 
+        fontSize:17,
+        fontWeight: '600',
+        marginLeft:30,
         marginBottom: 10,
         color: "#D64D43",
-    
+
     },
     input: {
         height: 50,
@@ -426,21 +426,21 @@ const styles = StyleSheet.create({
       },
 
       container: {
-  
+
     },
     container1: {
       // // flex: 1,
       // paddingTop:30, marginLeft: 15, marginRight:15,
     //   marginLeft: 10
-      
+
     },
     title:{
       marginTop:10,
       marginBottom: 10,
       marginLeft: 20
-  
+
     },
-  
+
     tableHeader: {
       flexDirection: "row",
       height: 50,

@@ -45,7 +45,7 @@ export default function NewsScreen({navigation}){
     }
   };
 
-   
+
   let [locale, setLocale] = useState('');
   let [lang, setLang] = useState('')
 
@@ -59,12 +59,12 @@ export default function NewsScreen({navigation}){
         AsyncStorage.setItem('appLanguage', locale)
       }
     })
-  
+
     useEffect(()=>{
       getData1()
   })
-  
-  const getData1 = () => { 
+
+  const getData1 = () => {
       try {
           AsyncStorage.getItem('appLanguage')
               .then(value => {
@@ -97,10 +97,10 @@ export default function NewsScreen({navigation}){
       setIsLoading(true)
         news_data.splice(0,news_data.length)
         const response = await axios.get(url)
-  
+
         const $ = cheerio.load(response.data)
         const news = $("#content > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2) > div > ul > li")
-        
+
         news.each(function(){
             date = $(this).find("span.date").text()
             label = $(this).find("span.title i").text()
@@ -108,7 +108,7 @@ export default function NewsScreen({navigation}){
             href = $(this).find("span.title a").attr("href")
             news_data.push({date,label,title, href})
             setNews(news_data)
-            
+
         })
         setIsLoading(false)
     }
@@ -120,7 +120,7 @@ export default function NewsScreen({navigation}){
 
 
 useEffect(()=>{
-  
+
   getGenre()
 },[])
 
@@ -146,7 +146,7 @@ for (let i=0; i < news_data.length / 20; i++){
            {(news_data[i].title).replace((news_data[i]).label, '')}
            </Text>
        </View>
-     </View> 
+     </View>
      <View style={{flexDirection:'row', width: windowWidth-20, marginTop: 0,justifyContent:'space-between',backgroundColor:theme.bottomNavigationColor, paddingLeft: 15, paddingRight:15, paddingBottom:15, borderBottomEndRadius: 15, borderBottomStartRadius:15 }}>
          <View style={{backgroundColor: theme.dateBack, width: 90, alignItems:'center',justifyContent:'center', borderRadius: 5,}} >
              <Text style={{color:theme.color, fontSize:14, color:'white'}}>
@@ -162,7 +162,7 @@ for (let i=0; i < news_data.length / 20; i++){
     </TouchableOpacity>
 
     </View>
-    
+
 
   )
 }
@@ -183,7 +183,7 @@ for (let i=0; i < news_data.length; i++){
            {(news_data[i].title).replace((news_data[i]).label, '')}
            </Text>
        </View>
-     </View> 
+     </View>
      <View style={{flexDirection:'row', width: windowWidth-20, marginTop: 0,justifyContent:'space-between',backgroundColor:theme.bottomNavigationColor, paddingLeft: 15, paddingRight:15, paddingBottom:15, borderBottomEndRadius: 15, borderBottomStartRadius:15 }}>
          <View style={{backgroundColor: theme.dateBack, width: 90, alignItems:'center',justifyContent:'center', borderRadius: 5,}} >
              <Text style={{color:theme.color, fontSize:14, color:'white'}}>
@@ -196,10 +196,10 @@ for (let i=0; i < news_data.length; i++){
            </TouchableOpacity> */}
          </View>
        </View>
-      
+
     </TouchableOpacity>
     </View>
-    
+
 
   )
 }
@@ -216,7 +216,7 @@ for (let i=0; i < news_data.length; i++){
           </View>
           <View style={{alignItems:'center'}}>
             {isWatch1 ? <TouchableOpacity style={{width:windowWidth-150, height: 50, borderColor:'#DC675F', borderWidth: 2, alignItems:'center', justifyContent:'center', marginTop: 10, marginBottom: 10, borderRadius: 50}}onPress={()=> {setIsWatch(true);setIsWatch1(false)}}><Text style={{fontSize: 16, color:'#DC675F', fontWeight:'bold'}}> Смотреть больше</Text></TouchableOpacity>: <></>}
-          
+
           </View>
 
           <View style={{marginBottom:80}}/>
@@ -229,34 +229,34 @@ for (let i=0; i < news_data.length; i++){
 const styles = StyleSheet.create({
   container:{
     // backgroundColor:'white',
-    width: windowWidth, 
+    width: windowWidth,
     height: windowHeight
   },
   header: {
     flexDirection:'row',
-    width: windowWidth-60, 
-    alignItems:'center', 
-    marginTop:40, 
-    marginLeft: 30 
+    width: windowWidth-60,
+    alignItems:'center',
+    marginTop:40,
+    marginLeft: 30
   },
   headerText:{
-    fontSize: 20, 
+    fontSize: 20,
     color: "#4D4D4D",
-    fontWeight:"bold", 
+    fontWeight:"bold",
     paddingVertical: 12
   },
 
   indicator: {
-    flex: 1, 
-    justifyContent:'center', 
-    alignItems: 'center', 
+    flex: 1,
+    justifyContent:'center',
+    alignItems: 'center',
     backgroundColor:'white'
   },
   card:{
-    width: windowWidth-40, 
-    marginBottom:15, 
-    height: 90, 
-    backgroundColor:'#D9D9D9', 
+    width: windowWidth-40,
+    marginBottom:15,
+    height: 90,
+    backgroundColor:'#D9D9D9',
     alignItems:'center',
     // justifyContent:'space-between',
     // justifyContent:'center',
@@ -265,23 +265,23 @@ const styles = StyleSheet.create({
     // flexDirection:'row'
   },
   cardHeader:{
-    width: '100%', 
-    height: 60, 
+    width: '100%',
+    height: 60,
     backgroundColor:'#D64D43',
-    borderTopRightRadius: 10, 
-    borderTopLeftRadius: 10, 
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
     justifyContent:'center'
   },
   cardHeaderInside:{
-    width: '80%', 
-    alignItems:'center', 
+    width: '80%',
+    alignItems:'center',
     flexDirection:'row',
     marginLeft: 20
   },
   cardHeaderText:{
-    color: '#4D4D4D', 
+    color: '#4D4D4D',
     fontSize: 16,
-    color:'white', 
+    color:'white',
     fontWeight:'bold'
   },
   cardBodyField: {
@@ -290,14 +290,14 @@ const styles = StyleSheet.create({
     marginTop:5
   },
   cardBody20: {
-    flexDirection:'row', 
-    height: 20, 
+    flexDirection:'row',
+    height: 20,
     justifyContent:'space-between',
     marginBottom: 5
   },
   cardBody40: {
-    flexDirection:'row', 
-    height: 40, 
+    flexDirection:'row',
+    height: 40,
     justifyContent:'space-between',
     marginBottom: 5
   },
@@ -305,9 +305,9 @@ const styles = StyleSheet.create({
     width: '70%'
   },
   paragraphNachalo:{
-    width: '30%', 
-    backgroundColor:'#229B18',  
-    alignItems:'center', 
+    width: '30%',
+    backgroundColor:'#229B18',
+    alignItems:'center',
     borderRadius: 5
   },
   paragraphNachaloText:{
@@ -315,12 +315,12 @@ const styles = StyleSheet.create({
   },
   paragraphKonec:{
     width: '30%',
-    backgroundColor:'#D64D43', 
-    alignItems:'center', 
+    backgroundColor:'#D64D43',
+    alignItems:'center',
     borderRadius: 5
   },
   paragraphText:{
-    width: '30%', 
+    width: '30%',
     alignItems:'center'
   }
 });

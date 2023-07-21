@@ -35,7 +35,7 @@ class ImageSlider extends React.Component{
         const viewSize = event.nativeEvent.layoutMeasurement.width;
         const contentOffset = event.nativeEvent.contentOffset.x
         const selectIndex = Math.floor(contentOffset / viewSize)
-        this.setState({selectIndex}) 
+        this.setState({selectIndex})
     }
 
     render(){
@@ -53,7 +53,7 @@ class ImageSlider extends React.Component{
                         />
                     ))}
 
-                </ScrollView> 
+                </ScrollView>
                 <View style={styles.circleDiv}>
                     {images.map((image, i)=> (
                         <View
@@ -66,7 +66,7 @@ class ImageSlider extends React.Component{
         )
     }
 
-    
+
 
 };
 

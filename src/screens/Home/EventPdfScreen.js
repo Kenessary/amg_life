@@ -15,7 +15,7 @@ export default function EventPdfScreen () {
     const config = {
       method: 'get',
       url: `http://95.57.218.120/?apitest.helloAPIWithParams55={"addr":"${globalThis.link}"}`,
-      headers: { 
+      headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
     }

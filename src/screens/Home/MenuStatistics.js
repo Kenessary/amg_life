@@ -12,7 +12,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function MenuStatistics(){
 
-  
+
   const theme = useContext(themeContext)
 
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -39,7 +39,7 @@ export default function MenuStatistics(){
   const [ stats, setStats ] = useState([])
   const [ isLoading, setIsLoading ] = useState(false)
 
-  
+
   const menuStats = () => {
       setIsLoading(true)
       const config = {
@@ -59,13 +59,13 @@ export default function MenuStatistics(){
         console.log(error);
         setIsLoading(false)
        })
-  } 
+  }
 
   useEffect(()=>{
     menuStats()
 },[])
 
-  
+
 if(isLoading) {
   return(
     <View style={{flex: 1, justifyContent:'center', alignItems: 'center', backgroundColor: isDarkMode === true ? '#262C38':''}}>
@@ -84,7 +84,7 @@ if(isLoading) {
           <Text style={{fontSize:17, fontWeight:'600', color: theme.color, marginTop:5}} >{dateClock}</Text>
 
           </View>
-          
+
 
 
           <View style={{alignItems:"center", marginTop:10}}>
@@ -129,7 +129,7 @@ if(isLoading) {
             </View>
           </View>
           </View>
-        
+
       </View>
     )
 }

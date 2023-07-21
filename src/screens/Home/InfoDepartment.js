@@ -31,7 +31,7 @@ import themeContext from '../../cores/themeContext';
 
 
 export default function InfoDeparment({navigation}) {
-  
+
   const theme = useContext(themeContext)
 
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -61,19 +61,19 @@ export default function InfoDeparment({navigation}) {
     i18n.locale = lang;
     i18n.defaultLocale = 'kz'
 
-    
+
 
     useEffect(()=>{
         if(locale !== ''){
           AsyncStorage.setItem('appLanguage', locale)
         }
       })
-    
+
       useEffect(()=>{
         getData1()
     })
-    
-    const getData1 = () => { 
+
+    const getData1 = () => {
         try {
             AsyncStorage.getItem('appLanguage')
                 .then(value => {
@@ -103,9 +103,9 @@ export default function InfoDeparment({navigation}) {
         //  console.log(globalThis.a)
   const [isLoading, setIsLoading] = useState(true)
   const [ workers, setWorkers ] = useState([])
-  const [ department, setDepartment ] = useState([]) 
+  const [ department, setDepartment ] = useState([])
   // const {isLoading} = useContext(AuthContext)
-  
+
   // console.log(workers.map((a)=> a.timereceive))
   const [ columns, setColumns ] = useState([
     "ФИО",
@@ -121,7 +121,7 @@ export default function InfoDeparment({navigation}) {
   globalThis.id = depsId
   // console.log(globalThis.id)
 
-  
+
   useEffect(()=>{
     // setIsLoading(true)
   const config = {
@@ -139,7 +139,7 @@ export default function InfoDeparment({navigation}) {
     let newArray = parse_third.map((list)=>{
       return {
         roditel : list.roditel,
-        id: list.id, 
+        id: list.id,
         fio: list.fio,
         doljnost: list.doljnost,
         cabinet: list.cabinet,
@@ -185,7 +185,7 @@ export default function InfoDeparment({navigation}) {
       // // console.log(newArray)
         setDepartment(newArray)
 
-   
+
         setIsLoading(false)
 
      })
@@ -223,7 +223,7 @@ export default function InfoDeparment({navigation}) {
 
 
 
-   
+
   //       setIsLoading(false)
 
   //    })
@@ -232,13 +232,13 @@ export default function InfoDeparment({navigation}) {
   //     setIsLoading(false)
   //    })
   // },[])
-  
+
   useEffect(()=>{
     console.log(date)
   },[])
   // console.log(department === [])
-  
-   
+
+
 
 
 // console.log(workers)
@@ -258,42 +258,42 @@ export default function InfoDeparment({navigation}) {
   //       </View>
   //   )
   // }
-  
+
   const tableHeader = (a) => (
   <View>
     <View>
     </View>
-  
+
   <View style={[styles.tableHeader ,{backgroundColor: theme.tableHeaderBack}]}>
-      <TouchableOpacity 
+      <TouchableOpacity
           style={styles.columnHeader} >
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
               {i18n.t('fioImia')}
-          </Text>   
+          </Text>
       </TouchableOpacity>
-      <TouchableOpacity 
+      <TouchableOpacity
           style={styles.columnHeader} >
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
             {i18n.t('doljnost')}
-          </Text> 
+          </Text>
       </TouchableOpacity>
-      <TouchableOpacity 
+      <TouchableOpacity
           style={styles.columnHeader} >
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
           {i18n.t('telphoneNum')}
           </Text>
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
           {i18n.t('cabinet')}
-          </Text>  
+          </Text>
       </TouchableOpacity>
-      <TouchableOpacity 
+      <TouchableOpacity
           style={styles.columnHeader} >
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
           {i18n.t('sotovi')}
           </Text>
           <Text style={[styles.columnHeaderTxt, {color: theme.color}]}>
           {i18n.t('pochta')}
-          </Text>  
+          </Text>
       </TouchableOpacity>
   </View>
   </View>
@@ -315,7 +315,7 @@ export default function InfoDeparment({navigation}) {
                   style= {[styles.title]}
                 />
               <View style={styles.container1}>
-                <FlatList 
+                <FlatList
                   data={workers.filter(x => x.roditel === a )}
                   style={{width: windowWidth-20}}
                   // keyExtractor={(item, index) => index+""}
@@ -340,12 +340,12 @@ export default function InfoDeparment({navigation}) {
                     )}}
                 />
               </View>
-              </View> 
-            </ScrollView>  
+              </View>
+            </ScrollView>
 
             </ScrollView>
           </View>
-        ) 
+        )
   }
 
   if(workers.length === 0) {
@@ -368,7 +368,7 @@ export default function InfoDeparment({navigation}) {
             <View><Text style={{fontSize: 20, color: theme.color, fontWeight:"bold", paddingVertical: 12}}>{globalThis.s}</Text></View>
       </View>
       <ScrollView nestedScrollEnabled={true} style={{ width: "100%"}} >
-        {depr} 
+        {depr}
         <View style={{marginBottom:80}}/>
       </ScrollView>
     </View>)

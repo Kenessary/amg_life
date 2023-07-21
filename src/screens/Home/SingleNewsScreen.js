@@ -65,7 +65,7 @@ export default function SingleNewsScreen ()  {
         paragraph.splice(0,paragraph.length)
         videos.splice(0,videos.length)
         const response = await axios.get(`http://www.cnpc-amg.kz/${globalThis.link_new}`)
-  
+
         const $ = cheerio.load(response.data)
 
         const stitle = $('#content > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2) > div > b > span')
@@ -88,7 +88,7 @@ export default function SingleNewsScreen ()  {
             date.push(day)
             setNewDate(date)
         })
-        
+
         const pictr = $('#content > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2) > div > img')
         pictr.each(function(){
             src = $(this).attr('src')
@@ -99,13 +99,13 @@ export default function SingleNewsScreen ()  {
             src = $(this).attr('src')
             pictures_links.push({src})
             setNewPictures(pictures_links)
-            
+
         })
 
         const par = $('p')
         par.each(function(){
             prt = $(this).text()
-            paragraph.push({prt})  
+            paragraph.push({prt})
         })
 
         const mp4 = $('source')
@@ -132,7 +132,7 @@ export default function SingleNewsScreen ()  {
 }
 
 useEffect(()=>{
-  
+
   getGenre()
 },[])
 
@@ -146,7 +146,7 @@ if(isLoading) {
   )
 }
 
-  const isVideo = [] 
+  const isVideo = []
 
   for (let i=0; i < videos.length; i++){
     // <Infodep link_video={videos[i].mp4}/>
@@ -168,12 +168,12 @@ if(isLoading) {
   return (
     <View style={{width:"100%", alignItems:'center', backgroundColor: theme.background}}>
       <ScrollView >
-        
+
       <View style={{width:windowWidth}}>
 
     {videos.length === 0 ?  <ImageSlider images ={pictures_links.map((links)=>'http://www.cnpc-amg.kz/'+ links.src)} /> : isVideo }
 
-         
+
       </View>
       <View style={{marginTop:10, width: "100%"}}>
         <View style={{alignItems:'center'}}>
@@ -193,16 +193,16 @@ if(isLoading) {
 
       </View>
       </ScrollView>
-      
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   indicator: {
-    flex: 1, 
-    justifyContent:'center', 
-    alignItems: 'center', 
+    flex: 1,
+    justifyContent:'center',
+    alignItems: 'center',
     width:'100%',
     height:"100%"
   },
