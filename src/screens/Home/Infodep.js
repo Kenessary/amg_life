@@ -7,6 +7,7 @@ export default function Infodep({link_video}) {
   const [status, setStatus] = React.useState({});
   return (
     <View style={styles.container}>
+      <Text>example</Text>
       <Video
         ref={video}
         style={styles.video}
@@ -23,6 +24,7 @@ export default function Infodep({link_video}) {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
