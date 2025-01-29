@@ -1,7 +1,5 @@
-# Gold Fitness
-An application for the Gold Fitness center that provides convenient tools for trainers and clients.
-For trainers: The ability to manage their client list, track their progress and achievements, and create personalized training plans.
-For clients: The ability to purchase memberships, sign up for group classes through the built-in calendar, and track personal achievements.
+# AMG-Life
+The "AMG-Life" mobile application for an oil company in Aktobe, built with React Native. The app successfully facilitates internal employee interactions and provides tools for monitoring business processes.
 
 ## Available Scripts
 
