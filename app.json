@@ -1,0 +1,75 @@
+{
+  "expo": {
+    "name": "AMG Life",
+    "notification": {
+      "icon": "./assets/push_icon.png"
+    },
+
+    "slug": "amg_life",
+    "version": "2.2.7",
+    "orientation": "portrait",
+    "icon": "./assets/cnpc_app_logo_ios.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/07f935e7-38fe-4508-b4d3-a6967aecfc68"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "usesAppleSignIn": true,
+      "newArchEnabled": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Приложение использует Face ID и Touch ID",
+        "NSCameraUsageDescription": "Разрешите использование камеры для сканирования QR кода чтобы войти в электронный документооборот.",
+        "UIBackgroundModes": ["fetch", "remote-notification"],
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      },
+      "bundleIdentifier": "kz.portmasterplus.cnpcamglife",
+      "runtimeVersion": "1.0.0"
+    },
+    "android": {
+      "versionCode": 68,
+      "runtimeVersion": "sdkVersion",
+      "newArchEnabled": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/cnpc_app_logo.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "kz.portmasterplus.cnpcamglife",
+      "googleServicesFile": "./android/app/google-services.json",
+      "usesCleartextTraffic": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "07f935e7-38fe-4508-b4d3-a6967aecfc68"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Разрешите использование камеры для сканирования QR кода чтобы войти в электронный документооборот."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/push_icon.png",
+          "defaultChannel": "default"
+        }
+      ]
+    ]
+  }
+}
